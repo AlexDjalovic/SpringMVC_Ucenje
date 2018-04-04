@@ -1,5 +1,7 @@
 package Kontroleri;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -47,7 +49,9 @@ public class UserKontroler {
 	//na kojima uz el napisem porukica,da se deli podatak
 	@ModelAttribute
 	public void prikaziPoruku(Model model) {
-		String m1="danas je moj dan";
+		//String m1="danas je moj dan";
+		LocalDate ll=LocalDate.now();
+		String m1="Danas je: "+ll.getDayOfMonth()+"."+ll.getMonth()+" "+ll.getYear()+".godine, i trenutno je: "+LocalTime.now();
 		model.addAttribute("porukica",m1);//ovo je isto kao da sam ovo dodao u registerSuccess method i u register metod
 		
 	}
