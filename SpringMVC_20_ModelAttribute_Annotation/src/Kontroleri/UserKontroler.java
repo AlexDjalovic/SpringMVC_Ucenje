@@ -43,4 +43,10 @@ public class UserKontroler {
 		return "registerSuccess";
 		//radilo je i kad je povratna vrednost metode bila modelandview a return value null
 	}
+	@ModelAttribute
+	public void prikaziPoruku(Model model) {
+		String m1="danas je moj dan";
+		model.addAttribute("porukica",m1);
+		
+	}
 }

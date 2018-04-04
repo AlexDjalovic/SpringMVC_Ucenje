@@ -8,6 +8,7 @@
 </head>
 <body>
 <h2>USPESNO STE SE REGISTROVALI SA SLEDECIM PODACIMA</h2>
+<h2>${porukica}</h2>
 <table>
 <tr>
 <td>Username</td>
