@@ -43,10 +43,12 @@ public class UserKontroler {
 		return "registerSuccess";
 		//radilo je i kad je povratna vrednost metode bila modelandview a return value null
 	}
+	//da ne bi u svakom metodu dodavao porukicu za nesto  a to nesto je zajednicko mogu da stavim anotaciju @modelattribute i onda ce na svim jsp
+	//na kojima uz el napisem porukica,da se deli podatak
 	@ModelAttribute
 	public void prikaziPoruku(Model model) {
 		String m1="danas je moj dan";
-		model.addAttribute("porukica",m1);
+		model.addAttribute("porukica",m1);//ovo je isto kao da sam ovo dodao u registerSuccess method i u register metod
 		
 	}
 }
