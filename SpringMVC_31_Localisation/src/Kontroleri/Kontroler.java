@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,6 +52,15 @@ public class Kontroler {
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String register(Model model) {
 		model.addAttribute("student", new Student());//MORA DA SE POSTAVI PRAZAN KONSTRUKTOR DA BI MOGLO DA SE KORISTI @ModelAttribute
+		String greska="NullPointerException";
+	/*	if(greska.equals("NullPointerException")) {
+			throw new NullPointerException();
+		}*/
 		return"register";
+	}
+	
+	@ExceptionHandler(value=NullPointerException.class)
+	public String handleNullPointerException() {
+		return "NullPointerException";
 	}
 }
