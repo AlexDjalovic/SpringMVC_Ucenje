@@ -11,6 +11,8 @@ public class Student {
 	private String city;
 	private String phone;
 	private Date dob;
+	
+	//get i set metode
 	public String getName() {
 		return name;
 	}
