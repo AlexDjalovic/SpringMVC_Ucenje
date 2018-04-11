@@ -10,7 +10,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class MojIntercepter  extends HandlerInterceptorAdapter{
 
-	
+	//metod kojim proveravam da li je danas taj mesec i ako jeste tada sajt ne radi
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
