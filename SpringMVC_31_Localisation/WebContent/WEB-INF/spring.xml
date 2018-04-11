@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        
+        <!-- DA BI  koristio stereotype annotacije u ovom slucaju ovde se radi o @Controller -->
+        <context:component-scan base-package="Kontroleri"/>
+        
+        <!-- DA BI  KORIStio bean validaciju moram da stavim i ovu mvc:annotation  -->
+      <mvc:annotation-driven/>
+
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+        </bean>
+        <!--DA BIH MOGAO DA KORISTIM PROPERTIES-->
+        <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="/WEB-INF/labels"></property>
+        </bean> 
+        
+        <!-- AKO HOCU DA KORISTIM INTERCEPTOR MORA OVAKO DA SE UBACI -->
+        <mvc:interceptors>
+     <!--    
+        <mvc:interceptor>
+        <mvc:mapping path="/register.html"/>
+        <bean class="model.MojIntercepter"/>
+        </mvc:interceptor>-->
+        
+        <bean class="model.MojIntercepter"/>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="Lang"/>
+        </bean>
+        </mvc:interceptors>
+        
+        <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="en"/>
+        <property name="cookieName" value="myLocaleCookie"/>
+        <property name="cookieMaxAge" value="3600"/>
+        </bean>
+        </beans>
