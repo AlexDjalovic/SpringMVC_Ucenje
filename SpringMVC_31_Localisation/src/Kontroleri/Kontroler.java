@@ -58,9 +58,9 @@ public class Kontroler {
 		}*/
 		return"register";
 	}
-	
+	/*
 	@ExceptionHandler(value=NullPointerException.class)
 	public String handleNullPointerException() {
 		return "NullPointerException";
-	}
+	}*/
 }
