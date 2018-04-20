@@ -49,6 +49,7 @@ public class Student {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
+	//KONSTRUKTORI
 	public Student(String name, String gender, List<String> technologies, String city, String phone, Date dob) {
 		super();
 		this.name = name;
