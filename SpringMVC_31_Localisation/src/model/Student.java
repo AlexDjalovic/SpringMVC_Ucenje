@@ -11,6 +11,7 @@ public class Student {
 	private String city;
 	private String phone;
 	private Date dob;
+	//GET I SET METODE
 	public String getName() {
 		return name;
 	}
@@ -47,6 +48,7 @@ public class Student {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
+	//KONSTRUKTORI
 	public Student(String name, String gender, List<String> technologies, String city, String phone, Date dob) {
 		super();
 		this.name = name;
